@@ -100,6 +100,9 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Описание', null=True)
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Цена')
 
+    def get_model_name(self):
+        return self.__class__.__name__.lower()
+
     def __str__(self):
         return self.title
 
